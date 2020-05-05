@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+.face {
+  color: red;
+}
+.back {
+  color: red;
+  opacity: 0.4;
+}
+</style>
+
+</head>
+<body>
+<h1 id="header" class="face">CSS を使ったプログラミング</h1>
+
+<script type="text/javascript">
+var header = document.getElementById('header');
+var degree = 0;
+function rotateHeader() {
+  degree = degree + 6;
+  degree = degree % 360;
+  if ((0 <= degree && degree < 90) || (270 <= degree && degree < 360)) {
+    header.className = 'face';
+  } else {
+    header.className = 'back';
+  }
+  header.style.transform = 'rotateX(' + degree + 'deg)';
+}
+setInterval(rotateHeader, 20);
+</script>
+</body>
+</html>
+
